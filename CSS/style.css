@@ -1,0 +1,127 @@
+:root {
+    /* alternar cores de fundo (implementar) */
+    --corDoTextoDoFundoPreto: white;
+    --corDeFundoPreto: black;
+    /* paleta de cores (também disponível em HTML/Imagens/PaletaDeCores) */
+    --corPrincipal: #1e202c;
+    --corSecundaria: #60519b;
+    --corTerciaria: #31323e;
+    --corQuartenaria: #bfc0d1;
+    /* cores gradiantes */
+    /*
+        var(--corPrincipal), var(--corSecundaria)
+        var(--corSecundaria), var(--corTerciaria)
+        var(--corTerciaria), var(--corQuartenaria)
+        var(--corPrincipal), var(--corTerciaria)
+    */
+}
+
+body {
+    background-image: radial-gradient(var(--corSecundaria), var(--corTerciaria)); /* to com dúvida entre radial e linear */
+    /* background-image: linear-gradient(var(--corSecundaria), var(--corTerciaria)); */
+    font-family: "Philosopher", sans-serif;
+    color: var(--corDoTextoDoFundoPreto);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    cursor: cell;
+    margin: auto;
+}
+
+header {
+    background-color: var(--corPrincipal);
+    color: var(--corDoTextoDoFundoPreto);
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    min-width: 100vw;
+    display: flex;
+}
+
+header ul li a {
+    background-color: var(--corSecundaria);
+    transition: 0.9ms background-image;
+    color: var(--corPrincipal);
+    transition: 0.9ms padding;
+    transition: 0.9ms color;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+header ul li a:hover {
+    background-image: radial-gradient(var(--corSecundaria), var(--corTerciaria));
+    color: var(--corDoTextoDoFundoPreto);
+    padding: 10px;
+}
+
+header .titulo {
+    text-shadow: 5px 5px 5px black;
+}
+
+header ul, .titulo {
+    margin: 20px 20px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.categorias .titulo-categoria {
+    text-shadow: 5px 3px 5px black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.categorias .container {
+    grid-template-columns: 400px 400px 400px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 20px;
+    display: grid;
+}
+
+.categorias .container img, video {
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 200px;
+    width: 300px;
+}
+
+.categorias .container .card-filme {
+    transition: 0.9ms background-image;
+    background-color: #60519b;
+    transition: 0.9ms padding;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.categorias .container .card-filme a {
+    color: var(--corDeFundoPreto);
+    transition: 1s font-size;
+    text-decoration: none;
+    list-style: none;
+}
+
+.categorias .container .card-filme a:hover {
+    font-size: 150%;
+}
+
+.categorias .container .card-filme:hover {
+    background-image: linear-gradient(var(--corPrincipal), var(--corSecundaria));
+    padding: 20px;
+}
+
+footer {
+    background-color: var(--corTerciaria);
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-width: 90vw;
+    padding: 20px;
+    display: flex;
+    height: 100;
+}
