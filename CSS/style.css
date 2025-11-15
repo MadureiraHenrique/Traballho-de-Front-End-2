@@ -1,24 +1,24 @@
 :root {
-    /* alternar cores de fundo (implementar) */
+    /* Cores do Tema */
     --corDoTextoDoFundoPreto: white;
     --corDeFundoPreto: black;
-    /* paleta de cores (também disponível em HTML/Imagens/PaletaDeCores) */
-    --corPrincipal: #1e202c;
-    --corSecundaria: #60519b;
-    --corTerciaria: #31323e;
-    --corQuartenaria: #bfc0d1;
-    /* cores gradiantes */
-    /*
-        var(--corPrincipal), var(--corSecundaria)
-        var(--corSecundaria), var(--corTerciaria)
-        var(--corTerciaria), var(--corQuartenaria)
-        var(--corPrincipal), var(--corTerciaria)
-    */
+    /* Paleta Roxo/Escuro (Padrão) */
+    --corPrincipalRoxo: #1e202c;
+    --corSecundariaRoxo: #60519b;
+    --corTerciariaRoxo: #31323e;
+    --corQuartenariaRoxo: #bfc0d1;
+
+    /* Paleta Azul/Verde (Alternativo/mudarCor) */
+    --corPrincipalAzul: #406a77;
+    --corSecundariaAzul: #47799d;
+    --corTerciariaAzul: #4a7c80;
+    --corQuartenariaAzul: #487070;
+    --corLinks1: #5d99af;
+    --corLinks2: #31323e;
 }
 
 body {
-    background-image: radial-gradient(var(--corSecundaria), var(--corTerciaria)); /* to com dúvida entre radial e linear */
-    /* background-image: linear-gradient(var(--corSecundaria), var(--corTerciaria)); */
+    background-image: radial-gradient(var(--corSecundariaRoxo), var(--corTerciariaRoxo));
     font-family: "Philosopher", sans-serif;
     color: var(--corDoTextoDoFundoPreto);
     background-repeat: no-repeat;
@@ -29,8 +29,12 @@ body {
     padding: 0;
 }
 
+body.mudarCor {
+    background-image: radial-gradient(#AFC2C1, #5d9f9b);
+}
+
 header {
-    background-color: var(--corPrincipal);
+    background-color: var(--corPrincipalRoxo);
     color: var(--corDoTextoDoFundoPreto);
     display: flex;
     justify-content: center;
@@ -39,10 +43,14 @@ header {
     min-width: 100vw;
 }
 
+header.mudarCor {
+    background-color: var(--corTerciariaAzul); /* #4a7c80 */
+}
+
 header ul li a {
-    background-color: var(--corSecundaria);
+    color: var(--corPrincipalRoxo);
+    background-color: var(--corSecundariaRoxo);
     transition: 0.9ms background-image;
-    color: var(--corPrincipal);
     transition: 0.9ms padding;
     transition: 0.9ms color;
     text-decoration: none;
@@ -51,14 +59,24 @@ header ul li a {
     transition: 0.5s ease-in-out;
 }
 
+header ul li a.mudarCor {
+    color: #275457;
+    background-color: #a5d4d9;
+}
+
 header ul li{
     margin-top: 5px;
 }
 
 header ul li a:hover, #botao-login:hover {
-    background-image: radial-gradient(var(--corSecundaria), var(--corTerciaria));
+    background-image: radial-gradient(var(--corSecundariaRoxo), var(--corTerciariaRoxo));
     color: var(--corDoTextoDoFundoPreto);
-    padding: 10px;
+}
+
+header ul li a.mudarCor:hover, #botao-login.mudarCor:hover {
+    background-image: radial-gradient(var(--corLinks1) , var(--corLinks2));
+    color: var(--corDoTextoDoFundoPreto);
+
 }
 
 header .titulo {
@@ -73,6 +91,8 @@ header ul, .titulo {
 }
 
 #botao-login {
+    /* TEMA PADRÃO (ROXO) */
+    color: var(--corPrincipalRoxo);
     background-color: #8f7aa6;
     border: none;
     border-radius: 10px;
@@ -85,11 +105,34 @@ header ul, .titulo {
     margin-top: 18px;
     transform: translateX(300px);
     cursor: pointer;
-    color: var(--corPrincipal);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.5s ease-in-out;
+}
+
+#botao-login.mudarCor {
+    color: #275457;
+    background-color: #a5d4d9;
+}
+
+.bi-palette-fill {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    display: block;
+    font-size: 25px;
+    background-color: #5339b7;
+    padding: 5px;
+    height: 28px;
+    width: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px black;
+}
+
+.bi-palette-fill.mudarCor {
+    background-color: #6ba8af;
 }
 
 #fundo-login {
@@ -133,7 +176,7 @@ header ul, .titulo {
     display: inline;
 }
 
- .bi-x-circle:hover, .bi-arrow-left-circle:hover{
+.bi-x-circle:hover, .bi-arrow-left-circle:hover{
     color: gray;
 }
 
@@ -167,13 +210,16 @@ header ul, .titulo {
     background-color: rgba(58, 29, 101, 0.73);
     padding: 10px;
     border-radius: 3px;
-    border: none;
     width: 230px;
     font-weight: 550;
     font-size: 16px;
     transform: translateY(83px);
     cursor: pointer;
     border: 2px solid transparent;
+}
+
+.enviar-form.mudarCor {
+    background-color: rgba(50, 129, 127, 0.73);
 }
 
 #formulario-cadastramento .enviar-form {
@@ -203,6 +249,10 @@ header ul, .titulo {
     background-color: #7b718f;
 }
 
+.enviar-form.mudarCor:hover {
+    background-color: #67a8b2;
+}
+
 .conteiner-inputs {
     display: flex;
     flex-direction: column;
@@ -216,6 +266,10 @@ header ul, .titulo {
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: 13px;
+}
+
+.label-inputs.mudarCor {
+    color: #1c4749;
 }
 
 @keyframes animacaoAparecerLogin {
@@ -278,6 +332,10 @@ header ul, .titulo {
     margin: 20px;
 }
 
+.categorias .container .card-filme.mudarCor {
+    background-color: #487070;
+}
+
 .categorias .container .card-filme a {
     color: var(--corDeFundoPreto);
     transition: 1s font-size;
@@ -290,12 +348,17 @@ header ul, .titulo {
 }
 
 .categorias .container .card-filme:hover {
-    background-image: linear-gradient(var(--corPrincipal), var(--corSecundaria));
+    background-image: linear-gradient(var(--corPrincipalRoxo), var(--corSecundariaRoxo));
+    padding: 20px;
+}
+
+.categorias .container .card-filme.mudarCor:hover {
+    background-image: linear-gradient(var(--corTerciariaAzul), var(--corPrincipalAzul));
     padding: 20px;
 }
 
 footer {
-    background-color: var(--corTerciaria);
+    background-color: var(--corTerciariaRoxo);
     justify-content: center;
     text-align: center;
     position: relative;
@@ -303,4 +366,8 @@ footer {
     padding: 20px;
     display: flex;
     height: 50px;
+}
+
+footer.mudarCor {
+    background-color: var(--corTerciariaAzul); /* #4a7c80 */
 }

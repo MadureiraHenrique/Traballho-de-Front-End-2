@@ -1,3 +1,4 @@
+// Gnt aqui é a parte onde vai aparecer as telinhas de login e cadastro
 const botao_login = document.getElementById('botao-login');
 const aparecer_login = document.getElementById('fundo-login');
 const formulario_login = document.getElementById('formulario-login');
@@ -12,6 +13,7 @@ const icone_voltar_login = document.querySelector('.bi-arrow-left-circle');
 document.addEventListener("DOMContentLoaded", (evento) => {
    popUpLogin();
    disappearLogin();
+   mudarCorLayout();
 });
 
 function popUpLogin() {
@@ -59,11 +61,39 @@ function receberDadosForm() {
 botao_cadastrar.addEventListener('click', (event) => {
     event.preventDefault();
     mudarDisplay(formulario_cadastro, formulario_login);
+    formulario_cadastro.reset();
     voltarLogin();
 });
 
 function voltarLogin() {
     icone_voltar_login.addEventListener('click', () => {
         mudarDisplay(formulario_login, formulario_cadastro);
-    })
+    });
+}
+
+//Gnt qqui vai ser a troca de cores
+
+const botao_icone_mudarCorLayout = document.querySelector('.bi-palette-fill');
+const body = document.body;
+const header = document.querySelector('header');
+const headerLinks = document.querySelectorAll('header ul li a');
+const botaoLogin = document.getElementById('botao-login');
+const enviarForms = document.querySelectorAll('.enviar-form');
+const labelInputs = document.querySelectorAll('.label-inputs');
+const cardFilmes = document.querySelectorAll('.card-filme');
+const footer = document.querySelector('footer');
+
+function mudarCorLayout() {
+    botao_icone_mudarCorLayout.addEventListener('click', () => {
+        body.classList.toggle('mudarCor');
+        header.classList.toggle('mudarCor');
+        botaoLogin.classList.toggle('mudarCor');
+        botao_icone_mudarCorLayout.classList.toggle('mudarCor');
+        footer.classList.toggle('mudarCor');
+
+        headerLinks.forEach(link => link.classList.toggle('mudarCor'));
+        enviarForms.forEach(form => form.classList.toggle('mudarCor'));
+        labelInputs.forEach(label => label.classList.toggle('mudarCor'));
+        cardFilmes.forEach(card => card.classList.toggle('mudarCor'));
+    });
 }
