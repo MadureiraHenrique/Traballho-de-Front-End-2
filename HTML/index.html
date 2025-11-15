@@ -13,13 +13,29 @@
   </head>
 
   <body>
-    <header>
-      <h2 class="titulo">Coda Fofos</h2>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Séries</a></li>
-        <li><a href="#">Filmes</a></li>
-      </ul>
+     <header class="cabecalho">
+        <button class="menu-hamburguer" id="menu-hamburguer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        
+        <h1>Coda fofos</h1>
+        
+        <form class="buscador"> 
+            <input type="search" placeholder="procurar">
+            <button type="submit">🔍︎</button>
+        </form>
+        
+        <nav class="menu-principal" id="menu-principal">
+            <ul>
+                <li class="buscador-mobile">
+                <button id="botao-busca-mobile" type="button">🔍︎ buscar</button>
+                </li> 
+                
+            <li><a href="">home</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="categorias">
