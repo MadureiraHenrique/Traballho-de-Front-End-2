@@ -98,7 +98,7 @@ header ul, .titulo {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-    height: 300px;
+    height: 370px;
     display: none;
     justify-content: center;
     align-items: center;
@@ -126,15 +126,19 @@ header ul, .titulo {
 .bi-eye, .bi-eye-slash {
     position: absolute;
     font-size: 19px;
-    left: 258px;
-    top: 139px;
+    right: 65px;
+    top: 185px;
     color: black;
     cursor: pointer;
     display: inline;
 }
 
-#fundo-login .bi-x-circle:hover{
+ .bi-x-circle:hover, .bi-arrow-left-circle:hover{
     color: gray;
+}
+
+.label-simbolo-obrigatorio {
+    color: #a40505;
 }
 
 #fundo-login.show {
@@ -146,12 +150,12 @@ header ul, .titulo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
 }
 
 #fundo-login form input {
     padding: 9px;
-    width: 200px;
+    width: 220px;
     border-radius: 5px;
     background-color: rgba(140, 137, 137, 0.26);
     border: none;
@@ -159,7 +163,7 @@ header ul, .titulo {
     font-weight: 500;
 }
 
-#enviar-form {
+.enviar-form {
     background-color: rgba(58, 29, 101, 0.73);
     padding: 10px;
     border-radius: 3px;
@@ -167,13 +171,51 @@ header ul, .titulo {
     width: 230px;
     font-weight: 550;
     font-size: 16px;
-    transform: translateY(55px);
+    transform: translateY(83px);
     cursor: pointer;
     border: 2px solid transparent;
 }
 
-#enviar-form:hover {
+#formulario-cadastramento .enviar-form {
+    transform: translateY(30px);
+}
+
+#formulario-login {
+    margin-bottom: 70px;
+}
+
+.bi-arrow-left-circle {
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    top: 10px;
+    right: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+#formulario-cadastramento {
+    margin-bottom: 45px;
+}
+
+.enviar-form:hover {
     background-color: #7b718f;
+}
+
+.conteiner-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label-inputs {
+    text-align: left;
+    font-size: 18px;
+    color: #130a3d;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 13px;
 }
 
 @keyframes animacaoAparecerLogin {
@@ -191,11 +233,12 @@ header ul, .titulo {
 
 #cadastrar {
     position: absolute;
-    bottom: 100px;
-    left: 68px;
+    bottom: 124px;
+    left: 55px;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    font-size: 16px;
     font-weight: 500;
 }
 

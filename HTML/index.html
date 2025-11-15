@@ -31,10 +31,10 @@
           <video controls poster="/HTML/Imagens/AnimeRoster.png" src="/HTML/Videos/VideoTeste1.mp4" alt="Roster Fighters"></video>
           <h2><a href="">Roster Fighters</a></h2>
         </div>
-        
+
         <div class="card-filme">
           <video controls poster="/HTML/Imagens/AnimeOnePunch.png" src="/HTML/Videos/VideoTeste2.mp4" alt="Roster Fighters"></video>
-          <h2><a href="">One Punch - 3T</a></h2>  
+          <h2><a href="">One Punch - 3T</a></h2>
         </div>
 
           <div class="card-filme">
@@ -125,15 +125,36 @@
         <!-- PopUp Login--->
         <section id="fundo-login"  >
             <i class="bi bi-x-circle"></i>
+
+            <form id="formulario-cadastramento">
+                <i class="bi bi-arrow-left-circle"></i>                <div class="conteiner-inputs">
+                    <label for="input-nome" class="label-inputs">Nome <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="text" name="nome" id="input-nome" placeholder="Digite seu nome" required maxlength="50">
+                </div>
+                <div class="conteiner-inputs">
+                    <label for="input-email" class="label-inputs">Email <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="email" name="email" id="input-email" placeholder="Digite seu email" required maxlength="50">
+                </div>
+                <div class="conteiner-inputs">
+                    <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="password" name="senha" class="input-password" placeholder="Digite sua senha com 6 dígitos" required minlength="6" maxlength="6">
+                </div>
+                <button type="submit" class="enviar-form">Cadastrar</button>
+            </form>
             <form id="formulario-login">
-                <input type="email" id="input-email" required placeholder="E-mail" />
-                <div>
-                <input type="password" id="input-password" required placeholder="Senha" />
+
+                <div class="conteiner-inputs">
+                <label for="input-email" class="label-inputs">E-mail <span class="label-simbolo-obrigatorio">*</span></label>
+                <input type="email" class="input-email" required placeholder="Ex: john@doe.com" />
+                </div>
+                <div class="conteiner-inputs">
+                <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
+                <input type="password" id="input-password" required placeholder="Insira sua senha" />
                 <i class="bi bi-eye"></i>
                     <i class="bi bi-eye-slash"></i>
                 </div>
                 <button id="cadastrar">Cadastra-se</button>
-                <button type="submit" id="enviar-form">Acessar</button>
+                <button type="submit" class="enviar-form">Acessar</button>
 
             </form>
         </section>
