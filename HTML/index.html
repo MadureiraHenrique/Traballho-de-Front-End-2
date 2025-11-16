@@ -9,33 +9,21 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/HTML/Imagens/Logo.png">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Streaming - Coda Fofos</title>
   </head>
 
   <body>
-     <header class="cabecalho">
-        <button class="menu-hamburguer" id="menu-hamburguer">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        
-        <h1>Coda fofos</h1>
-        
-        <form class="buscador"> 
-            <input type="search" placeholder="procurar">
-            <button type="submit">🔍︎</button>
-        </form>
-        
-        <nav class="menu-principal" id="menu-principal">
-            <ul>
-                <li class="buscador-mobile">
-                <button id="botao-busca-mobile" type="button">🔍︎ buscar</button>
-                </li> 
-                
-            <li><a href="">home</a></li>
-            </ul>
-        </nav>
+    <header>
+      <h2 class="titulo">Coda Fofos</h2>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Séries</a></li>
+        <li><a href="#">Filmes</a></li>
+      </ul>
+        <button id="botao-login">Login</button>
+        <i class="bi bi-palette-fill"></i>
+
     </header>
 
     <main class="categorias">
@@ -45,13 +33,13 @@
           <video controls poster="/HTML/Imagens/AnimeRoster.png" src="/HTML/Videos/VideoTeste1.mp4" alt="Roster Fighters"></video>
           <h2><a href="">Roster Fighters</a></h2>
         </div>
-        
+
         <div class="card-filme">
           <video controls poster="/HTML/Imagens/AnimeOnePunch.png" src="/HTML/Videos/VideoTeste2.mp4" alt="Roster Fighters"></video>
-          <h2><a href="">One Punch - 3T</a></h2>  
+          <h2><a href="">One Punch - 3T</a></h2>
         </div>
-        
-        <div class="card-filme">
+
+          <div class="card-filme">
           <video controls poster="/HTML/Imagens/AnimeGachiakuta.png" src="/HTML/Videos/VideoTeste3.mp4" alt="Gachiakuta"></video>
           <h2><a href="">Gachiakuta</a></h2>
         </div>
@@ -136,10 +124,48 @@
         </div>
       </section>
 
+        <!-- PopUp Login--->
+        <section id="fundo-login"  >
+            <i class="bi bi-x-circle"></i>
+
+            <form id="formulario-cadastramento">
+                <i class="bi bi-arrow-left-circle"></i>                <div class="conteiner-inputs">
+                    <label for="input-nome" class="label-inputs">Nome <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="text" name="nome" id="input-nome" placeholder="Digite seu nome" required maxlength="50">
+                </div>
+                <div class="conteiner-inputs">
+                    <label for="input-email" class="label-inputs">Email <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="email" name="email" id="input-email" placeholder="Digite seu email" required maxlength="50">
+                </div>
+                <div class="conteiner-inputs">
+                    <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
+                    <input type="password" name="senha" class="input-password" placeholder="Digite sua senha com 6 dígitos" required minlength="6" maxlength="6">
+                </div>
+                <button type="submit" class="enviar-form">Cadastrar</button>
+            </form>
+            <form id="formulario-login">
+
+                <div class="conteiner-inputs">
+                <label for="input-email" class="label-inputs">E-mail <span class="label-simbolo-obrigatorio">*</span></label>
+                <input type="email" class="input-email" required placeholder="Ex: john@doe.com" />
+                </div>
+                <div class="conteiner-inputs">
+                <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
+                <input type="password" id="input-password" required minlength="6" maxlength="6" placeholder="Insira sua senha" />
+                <i class="bi bi-eye"></i>
+                    <i class="bi bi-eye-slash"></i>
+                </div>
+                <button id="cadastrar">Cadastra-se</button>
+                <button type="submit" class="enviar-form">Acessar</button>
+
+            </form>
+        </section>
     </main>
 
     <footer>
       <p>&copy 2025 Coda Fofos. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="../JS/App.js"></script>
   </body>
 </html>
