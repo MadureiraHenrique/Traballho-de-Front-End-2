@@ -1,4 +1,4 @@
-// Gnt aqui é a parte onde vai aparecer as telinhas de login e cadastro
+// Gnt, aqui é a parte onde vai aparecer as telinhas de login e cadastro
 const botao_login = document.getElementById('botao-login');
 const aparecer_login = document.getElementById('fundo-login');
 const formulario_login = document.getElementById('formulario-login');
@@ -129,8 +129,7 @@ function voltarLogin() {
     });
 }
 
-//Gnt qqui vai ser a troca de cores
-
+//Gnt, aqui vai ser a troca de cores
 const botao_icone_mudarCorLayout = document.querySelector('.bi-palette-fill');
 const body = document.body;
 const header = document.querySelector('header');
@@ -139,6 +138,9 @@ const botaoLogin = document.getElementById('botao-login');
 const enviarForms = document.querySelectorAll('.enviar-form');
 const labelInputs = document.querySelectorAll('.label-inputs');
 const cardFilmes = document.querySelectorAll('.card-filme');
+const cardSeries = document.querySelectorAll('.card-serie');
+const cardAnimes = document.querySelectorAll('.card-anime');
+const cardPopulares = document.querySelectorAll('.card-popular');
 const footer = document.querySelector('footer');
 
 function mudarCorLayout() {
@@ -153,5 +155,39 @@ function mudarCorLayout() {
         enviarForms.forEach(form => form.classList.toggle('mudarCor'));
         labelInputs.forEach(label => label.classList.toggle('mudarCor'));
         cardFilmes.forEach(card => card.classList.toggle('mudarCor'));
+        cardSeries.forEach(card => card.classList.toggle('mudarCor'));
+        cardAnimes.forEach(card => card.classList.toggle('mudarCor'));
+        cardPopulares.forEach(card => card.classList.toggle('mudarCor'));
     });
 }
+
+//                   Menu Burguer (Parte de Glauber)
+// const menuBotao = document.getElementById("menu-hamburguer");
+
+// const menuNav = document.getElementById("menu-principal");
+
+// const botaoBuscaMobile = document.getElementById("botao-busca-mobile");
+
+// const formBuscador = document.querySelector(".buscador");
+
+// menuBotao.addEventListener("click", function () {
+//   menuNav.classList.toggle("active");
+
+//   menuBotao.classList.toggle("open");
+
+//   formBuscador.classList.remove("visivel-mobile");
+// });
+
+// botaoBuscaMobile.addEventListener("click", function () {
+//   menuNav.classList.remove("active");
+
+//   menuBotao.classList.remove("open");
+
+//   formBuscador.classList.add("visivel-mobile");
+
+//   const inputBusca = formBuscador.querySelector('input[type="search"]');
+
+//   if (inputBusca) {
+//     inputBusca.focus();
+//   }
+// });

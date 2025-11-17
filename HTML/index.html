@@ -17,21 +17,48 @@
   </head>
 
   <body>
-    <header>
+    <header class="cabecalho">
       <h2 class="titulo">Coda Fofos</h2>
-      <ul>
-        <li><a href="#">Inicio</a></li>
+      
+      <ul class="lista-catalogo">
+        <li><a href="#cabecalho">Inicio</a></li>
         <li><a href="#">Séries</a></li>
         <li><a href="#">Filmes</a></li>
+        <li><a href="#">Animes</a></li>
       </ul>
-      <button id="botao-login">Login</button>
+      
       <i class="bi bi-palette-fill"></i>
+      
+      <button id="botao-login">Login</button>
+      
+      <!-- <form class="buscador">
+        <input type="search" placeholder="procurar" />
+        
+        <button type="submit">🔍︎</button>
+      </form>
+
+      <button class="menu-hamburguer" id="menu-hamburguer">
+        <span class="bar"></span>
+
+        <span class="bar"></span>
+
+        <span class="bar"></span>
+      </button>
+      
+      <nav class="menu-principal" id="menu-principal">
+        <ul>
+          <li class="buscador-mobile">
+            <button id="botao-busca-mobile" type="button">🔍︎ buscar</button>
+          </li>
+          <li><a href="">home</a></li>
+        </ul>
+      </nav> -->
     </header>
 
     <main class="categorias">
       <h1 class="titulo-categoria">Populares - Em Alta</h1>
       <section class="container">
-        <div class="card-filme">
+        <div class="card-popular">
           <video
             controls
             poster="/HTML/Imagens/AnimeRoster.png"
@@ -41,7 +68,7 @@
           <h2><a href="">Roster Fighters</a></h2>
         </div>
 
-        <div class="card-filme">
+        <div class="card-popular">
           <video
             controls
             poster="/HTML/Imagens/AnimeOnePunch.png"
@@ -51,7 +78,7 @@
           <h2><a href="">One Punch - 3T</a></h2>
         </div>
 
-        <div class="card-filme">
+        <div class="card-popular">
           <video
             controls
             poster="/HTML/Imagens/AnimeGachiakuta.png"
@@ -61,38 +88,42 @@
           <h2><a href="">Gachiakuta</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-4" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-4" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-5" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-5" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-6" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-1" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-7" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-2" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-8" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
-        <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-3" />
+        <div class="card-popular">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Popular-9" />
           <h2><a href="">Titulo</a></h2>
         </div>
       </section>
 
-      <h1 class="titulo-categoria">Filmes e Séries</h1>
+
+<!-------------------------------------FILMES------------------------------------->
+
+
+      <h1 class="titulo-categoria">Filmes</h1>
       <section class="container">
         <div class="card-filme">
           <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-1" />
@@ -120,35 +151,129 @@
         </div>
 
         <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-" />
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-6" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
         <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-1" />
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-7" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
         <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-2" />
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-8" />
           <h2><a href="">Titulo</a></h2>
         </div>
 
         <div class="card-filme">
-          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-3" />
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Filme-9" />
           <h2><a href="">Titulo</a></h2>
         </div>
       </section>
 
-      <div id="modal-overlay">
-        <div id="modal-content">
-          <button id="modal-close-btn">&times;</button>
-          <img id="modal-image" src="" alt="Poster do Filme" />
-          <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
-          <button id="modal-watch-btn">Assistir</button>
+
+<!-------------------------------------Séries------------------------------------->
+
+
+      <h1 class="titulo-categoria">Séries</h1>
+      <section class="container">
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-1" />
+          <h2><a href="">Titulo</a></h2>
         </div>
-      </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-2" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-3" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-4" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-5" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-6" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-7" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-8" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-serie">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Serie-9" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+      </section>
+
+
+<!-------------------------------------Animes------------------------------------->
+
+
+      <h1 class="titulo-categoria">Animes</h1>
+      <section class="container">
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-1" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-2" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-3" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-4" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-5" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-6" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-7" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-8" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+
+        <div class="card-anime">
+          <img src="/HTML/Imagens/VideoIndisponivel.png" alt="Anime-9" />
+          <h2><a href="">Titulo</a></h2>
+        </div>
+      </section>
 
       <!-- PopUp Login--->
       <section id="fundo-login">
