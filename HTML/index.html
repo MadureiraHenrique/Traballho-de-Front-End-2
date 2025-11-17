@@ -8,8 +8,11 @@
       href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/HTML/Imagens/Logo.png">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="/HTML/Imagens/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <title>Streaming - Coda Fofos</title>
   </head>
 
@@ -21,26 +24,40 @@
         <li><a href="#">Séries</a></li>
         <li><a href="#">Filmes</a></li>
       </ul>
-        <button id="botao-login">Login</button>
-        <i class="bi bi-palette-fill"></i>
-
+      <button id="botao-login">Login</button>
+      <i class="bi bi-palette-fill"></i>
     </header>
 
     <main class="categorias">
-      <h1 class=" titulo-categoria">Populares - Em Alta</h1>
+      <h1 class="titulo-categoria">Populares - Em Alta</h1>
       <section class="container">
         <div class="card-filme">
-          <video controls poster="/HTML/Imagens/AnimeRoster.png" src="/HTML/Videos/VideoTeste1.mp4" alt="Roster Fighters"></video>
+          <video
+            controls
+            poster="/HTML/Imagens/AnimeRoster.png"
+            src="/HTML/Videos/VideoTeste1.mp4"
+            alt="Roster Fighters"
+          ></video>
           <h2><a href="">Roster Fighters</a></h2>
         </div>
 
         <div class="card-filme">
-          <video controls poster="/HTML/Imagens/AnimeOnePunch.png" src="/HTML/Videos/VideoTeste2.mp4" alt="Roster Fighters"></video>
+          <video
+            controls
+            poster="/HTML/Imagens/AnimeOnePunch.png"
+            src="/HTML/Videos/VideoTeste2.mp4"
+            alt="Roster Fighters"
+          ></video>
           <h2><a href="">One Punch - 3T</a></h2>
         </div>
 
-          <div class="card-filme">
-          <video controls poster="/HTML/Imagens/AnimeGachiakuta.png" src="/HTML/Videos/VideoTeste3.mp4" alt="Gachiakuta"></video>
+        <div class="card-filme">
+          <video
+            controls
+            poster="/HTML/Imagens/AnimeGachiakuta.png"
+            src="/HTML/Videos/VideoTeste3.mp4"
+            alt="Gachiakuta"
+          ></video>
           <h2><a href="">Gachiakuta</a></h2>
         </div>
 
@@ -74,7 +91,6 @@
           <h2><a href="">Titulo</a></h2>
         </div>
       </section>
-
 
       <h1 class="titulo-categoria">Filmes e Séries</h1>
       <section class="container">
@@ -124,42 +140,100 @@
         </div>
       </section>
 
-        <!-- PopUp Login--->
-        <section id="fundo-login"  >
-            <i class="bi bi-x-circle"></i>
+      <div id="modal-overlay">
+        <div id="modal-content">
+          <button id="modal-close-btn">&times;</button>
+          <img id="modal-image" src="" alt="Poster do Filme" />
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <button id="modal-watch-btn">Assistir</button>
+        </div>
+      </div>
 
-            <form id="formulario-cadastramento">
-                <i class="bi bi-arrow-left-circle"></i>                <div class="conteiner-inputs">
-                    <label for="input-nome" class="label-inputs">Nome <span class="label-simbolo-obrigatorio">*</span></label>
-                    <input type="text" name="nome" id="input-nome" placeholder="Digite seu nome" required maxlength="50">
-                </div>
-                <div class="conteiner-inputs">
-                    <label for="input-email" class="label-inputs">Email <span class="label-simbolo-obrigatorio">*</span></label>
-                    <input type="email" name="email" id="input-email" placeholder="Digite seu email" required maxlength="50">
-                </div>
-                <div class="conteiner-inputs">
-                    <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
-                    <input type="password" name="senha" class="input-password" placeholder="Digite sua senha com 6 dígitos" required minlength="6" maxlength="6">
-                </div>
-                <button type="submit" class="enviar-form">Cadastrar</button>
-            </form>
-            <form id="formulario-login">
+      <!-- PopUp Login--->
+      <section id="fundo-login">
+        <i class="bi bi-x-circle"></i>
 
-                <div class="conteiner-inputs">
-                <label for="input-email" class="label-inputs">E-mail <span class="label-simbolo-obrigatorio">*</span></label>
-                <input type="email" class="input-email" required placeholder="Ex: john@doe.com" />
-                </div>
-                <div class="conteiner-inputs">
-                <label for="input-password" class="label-inputs">Senha <span class="label-simbolo-obrigatorio">*</span></label>
-                <input type="password" id="input-password" required minlength="6" maxlength="6" placeholder="Insira sua senha" />
-                <i class="bi bi-eye"></i>
-                    <i class="bi bi-eye-slash"></i>
-                </div>
-                <button id="cadastrar">Cadastra-se</button>
-                <button type="submit" class="enviar-form">Acessar</button>
-
-            </form>
-        </section>
+        <form id="formulario-cadastramento">
+          <i class="bi bi-arrow-left-circle"></i>
+          <div class="conteiner-inputs">
+            <label for="input-nome" class="label-inputs"
+              >Nome <span class="label-simbolo-obrigatorio">*</span></label
+            >
+            <input
+              type="text"
+              name="nome"
+              id="input-nome"
+              placeholder="Digite seu nome"
+              required
+              maxlength="50"
+            />
+          </div>
+          <div class="conteiner-inputs">
+            <label for="input-email" class="label-inputs"
+              >Email <span class="label-simbolo-obrigatorio">*</span></label
+            >
+            <input
+              type="email"
+              name="email"
+              id="input-email-cadastro"
+              placeholder="Digite seu email"
+              required
+              maxlength="50"
+            />
+          </div>
+          <div class="conteiner-inputs">
+            <label for="input-password" class="label-inputs"
+              >Senha <span class="label-simbolo-obrigatorio">*</span></label
+            >
+            <input
+              type="password"
+              name="senha"
+              class="input-password"
+              placeholder="Digite sua senha com 6 dígitos"
+              required
+              minlength="6"
+              maxlength="6"
+            />
+          </div>
+          <p id="msg-error-cadastro"></p>
+          <button type="submit" class="enviar-form">Cadastrar</button>
+        </form>
+        <form id="formulario-login">
+          <div class="conteiner-inputs">
+            <label for="input-email" class="label-inputs"
+              >E-mail <span class="label-simbolo-obrigatorio">*</span></label
+            >
+            <input
+              name="email-login"
+              type="email"
+              class="input-email"
+              id="input-email-login"
+              required
+              placeholder="Ex: john@doe.com"
+            />
+          </div>
+          <div class="conteiner-inputs">
+            <label for="input-password" class="label-inputs"
+              >Senha <span class="label-simbolo-obrigatorio">*</span></label
+            >
+            <input
+              name="senha-login"
+              type="password"
+              id="input-password"
+              required
+              minlength="6"
+              maxlength="6"
+              placeholder="Insira sua senha"
+            />
+            <i class="bi bi-eye"></i>
+            <i class="bi bi-eye-slash"></i>
+          </div>
+          <button id="cadastrar">Cadastra-se</button>
+          <p id="msg-error-login"></p>
+          <button type="submit" class="enviar-form">Acessar</button>
+        </form>
+      </section>
     </main>
 
     <footer>
