@@ -2,13 +2,20 @@
 const botao_login = document.getElementById('botao-login');
 const aparecer_login = document.getElementById('fundo-login');
 const formulario_login = document.getElementById('formulario-login');
-const formulario_cadastro= document.getElementById('formulario-cadastramento');
+const formulario_cadastro = document.getElementById('formulario-cadastramento');
 const icone_fechar = document.querySelector('.bi-x-circle');
 const icone_verSenha = document.querySelector('.bi-eye');
 const icone_esconderSenha = document.querySelector('.bi-eye-slash');
+const input_email = document.getElementById('input-email-login');
 const input_password = document.getElementById('input-password');
 const botao_cadastrar = document.getElementById('cadastrar');
 const icone_voltar_login = document.querySelector('.bi-arrow-left-circle');
+const dadosUsuarios = [
+  { nome: "teste", email: "teste@gmail.com", senha: "123456" },
+  { nome: "admin", email: "admin@site.com", senha: "654321" }
+];
+const msg_error_login = document.getElementById('msg-error-login');
+const msg_error_cadastro = document.getElementById('msg-error-cadastro');
 
 document.addEventListener("DOMContentLoaded", (evento) => {
    popUpLogin();
@@ -52,10 +59,61 @@ function mudarDisplay(icone1, icone2) {
 function receberDadosForm() {
     const data = new FormData(formulario_login);
 
-    const email = data.get('input-email');
-    const password = data.get('input-password');
+    const emailDigitado = data.get('email-login');
+    const senhaDigitada = data.get('senha-login');
 
-    return [email, password];
+    return {
+        email: emailDigitado,
+        senha: senhaDigitada
+    };
+}
+
+//momento em que o submit da aba de login é clicado
+formulario_login.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+
+    const dados = receberDadosForm();
+    verificarLogin(dados.email, dados.senha);
+});
+
+formulario_cadastro.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+    
+    const data = new FormData(formulario_cadastro);
+
+    const nomeDigitado = data.get('nome');
+    const emailDigitado = data.get('email');
+    const senhaDigitada = data.get('senha');
+    const dadosEnviados = {
+        nome: nomeDigitado,
+        email: emailDigitado,
+        senha: senhaDigitada
+    }
+
+    if (nomeDigitado == null || emailDigitado == null || senhaDigitada == null) {
+        msg_error_cadastro.textContent = "campos invalidos";
+    } else {
+        msg_error_cadastro.textContent = "";
+        alert("cadastro concluido com sucesso");
+        dadosUsuarios.push(dadosEnviados);
+        console.log(dadosUsuarios);
+    }
+});
+
+function verificarLogin(email, senha) {
+    const usuarioEncontrado = dadosUsuarios.find(usuario => {
+        return (usuario.email == email && usuario.senha == senha);
+    });
+
+    if (usuarioEncontrado) {
+        msg_error_login.textContent = "";
+        alert("login bem sucedido!");
+
+        window.location.href = "/HTML/index.html";
+    } else {
+        msg_error_login.textContent = "Email ou senha invalida, tente novamente";
+        input_password.value = "";
+    }
 }
 
 botao_cadastrar.addEventListener('click', (event) => {
