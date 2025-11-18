@@ -595,3 +595,68 @@ footer {
 footer.mudarCor {
   background-color: var(--corTerciariaAzul);
 }
+
+@media (max-width: 768px) {
+  /* Grid das categorias (2 colunas no mobile) */
+  .categorias .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 10px;
+  }
+
+  /* Cards menores */
+  .categorias .container .card-filme,
+  .categorias .container .card-popular,
+  .categorias .container .card-anime,
+  .categorias .container .card-serie {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  /* Imagens responsivas */
+  .categorias .container img,
+  .categorias .container video {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Título reduzido */
+  .categorias .titulo-categoria {
+    font-size: 24px;
+  }
+
+  /* Header ajustado */
+  header .titulo {
+    font-size: 28px;
+  }
+
+  header ul li a {
+    padding: 6px;
+    margin: 5px;
+  }
+
+  #botao-login {
+    width: 160px;
+    padding: 6px;
+  }
+
+  .bi-palette-fill {
+    right: 15px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Grid vira 1 coluna */
+  .categorias .container {
+    grid-template-columns: 1fr;
+  }
+
+  .categorias .titulo-categoria {
+    font-size: 20px;
+  }
+
+  header .titulo {
+    font-size: 24px;
+  }
+}
